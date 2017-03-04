@@ -1,0 +1,64 @@
+#!/bin/sh
+##########################
+# Based on script published by Stephen Chandler Paul on Github Gist
+#	https://gist.github.com/Lyude/9786739
+##### How to install #####
+# Because this is a short script and it was written mainly for my own
+# convenience I haven't bothered writing any installation scripts for it, and
+# it's simple enough to install that I just figured I'd write the installation
+# instructions here with a big header so everyone notices them.
+#
+# Hopefully this should go without saying, but this script requires you use
+# NetworkManager for this to work. In addition, you must also have WEXT
+# compatibility enabled in your kernel for cfg80211 and you must have curl
+# installed. Most Linux distributions have these things by default anyway.
+#
+# To install, simply change in the USER and PASS enviroment variables with
+# your credentials, for example:
+#	USER="hseguest"
+#	PASS="hsepassword"
+# And then place this file in:
+#	/etc/NetworkManager/dispatcher.d
+# Under the name:
+#	5-hse-web-authentication
+# Then mark it as an executable with:
+#	# chmod +x /etc/NetworkManager/dispatcher.d/5-hse-web-authentication
+#
+# Once installed, your computer should automatically send your credentials to
+# the web authentication every time you connect.
+# Cheers!
+#       Ivan Trubach (modifications for HSE) & Stephen Chandler Paul
+##########################
+
+$CURL_BIN="$(which curl)"
+if [ -z "$CURL_BIN" ]; then exit 0; fi
+
+ESSID="HSE"
+URL="https://wlc38.hse.ru/login.html"
+USER="hseguest"
+PASS="hsepassword"
+GENERATE_204="http://www.gstatic.com/generate_204"
+
+interface=$1 if_status=$2
+
+alias curl="$CURL --interface $interface "
+
+if [ $if_status = "up" ] && iwconfig $interface | grep "ESSID:\"$ESSID\"" -qs -m1 ; then
+	# Check if we need to authenticate
+	if [ $(curl -sk $GENERATE_204 -w '%{http_code}' -o /dev/null) = "200" ]; then
+		echo "Beginning web authentication for HSE."
+		curl --insecure --silent -o /dev/null $URL \
+			--data-urlencode "username=$USER" \
+			--data-urlencode "password=$PASS" \
+			-d buttonClicked=4 \
+			-d Submit=Submit
+
+		res=$(curl -sk $GENERATE_204 -w '%{http_code}' -o /dev/null)
+		if [ $res = "204" ]; then
+			echo "Web authentication for HSE completed."
+		else
+			echo "Web authentication failed: $GENERATE_204 returned $res instead of 204."
+			exit 1
+		fi
+	fi
+fi
