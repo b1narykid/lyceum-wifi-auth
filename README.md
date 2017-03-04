@@ -3,7 +3,7 @@ HSE WiFi AP authrization scripts and utils
 
 # Synopsis
 
-This project contains utils and scripts for `HSE` WLAN authorization automation.
+This project contains utils and scripts for `HSE` WLAN authentication automation.
 
 # HTTP request example
 
@@ -12,7 +12,7 @@ This project contains utils and scripts for `HSE` WLAN authorization automation.
 ## Warning
 
 Please, note that currently HSE lyceum's AP is the only one confirmed to be
-successfully authorizing user using scripts contained in this project, and it
+successfully working with scripts contained in this project, and it
 may work only on author's computer.  That said, any use of the software is
 entirely at your own risk.
 
