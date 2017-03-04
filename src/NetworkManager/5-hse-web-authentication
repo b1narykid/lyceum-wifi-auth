@@ -30,7 +30,7 @@
 #       Ivan Trubach (modifications for HSE) & Stephen Chandler Paul
 ##########################
 
-$CURL_BIN="$(which curl)"
+CURL_BIN="$(which curl)"
 if [ -z "$CURL_BIN" ]; then exit 0; fi
 
 ESSID="HSE"
@@ -41,7 +41,7 @@ GENERATE_204="http://www.gstatic.com/generate_204"
 
 interface=$1 if_status=$2
 
-alias curl="$CURL --interface $interface "
+alias curl="$CURL_BIN --interface $interface "
 
 if [ $if_status = "up" ] && iwconfig $interface | grep "ESSID:\"$ESSID\"" -qs -m1 ; then
 	# Check if we need to authenticate
