@@ -1,4 +1,4 @@
-Copyright (c) 2016 Ivan Trubach <dev at b1nary.tk>
+Copyright (c) 2016-2018 Ivan Trubach <dev at b1nary.tk>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
