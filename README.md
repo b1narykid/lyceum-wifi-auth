@@ -12,6 +12,11 @@ This project contains utils for automated `HSE` Captive Portal authentication.
 
 *TBD*
 
+Note that their Captive Portal rejects requests without queries below:
+- `Submit=Submit` query for auth,
+- `Logout=Logout` for logout,
+- `buttonClicked=4` for auth,
+
 ### Expirements (TODO)
 
 - Investigate how `hse.ru` authenicates users.

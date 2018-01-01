@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Credentials
+username="hseguest"
+password="hsepassword"
+# optional `redirect_url` query value
+redirect="http://www.hse.ru"
+
+exec \
+curl -L "https://wlc38.hse.ru/login.html" \
+     -d Submit=Submit -d buttonClicked=4 \
+     --data-urlencode password="$password" \
+     --data-urlencode username="$username" \
+     --data-urlencode redirect_url="$redirect" \
+     "$@"

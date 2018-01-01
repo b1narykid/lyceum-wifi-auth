@@ -1,0 +1,5 @@
+#!/bin/sh
+exec \
+curl -L "https://wlc38.hse.ru/logout.html" \
+     -d "Logout=Logout" \
+     "$@"

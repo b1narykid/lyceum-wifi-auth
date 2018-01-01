@@ -15,19 +15,20 @@
 #
 # To install, simply change in the USER and PASS enviroment variables with
 # your credentials, for example:
-#	USER="hseguest"
-#	PASS="hsepassword"
+#       USER="hseguest"
+#       PASS="hsepassword"
 # And then place this file in:
-#	/etc/NetworkManager/dispatcher.d
+#       /etc/NetworkManager/dispatcher.d
 # Under the name:
-#	5-hse-web-authentication
+#       5-hse-web-authentication
 # Then mark it as an executable with:
-#	# chmod +x /etc/NetworkManager/dispatcher.d/5-hse-web-authentication
+#       chmod +x /etc/NetworkManager/dispatcher.d/5-hse-web-authentication
 #
 # Once installed, your computer should automatically send your credentials to
 # the web authentication every time you connect.
 # Cheers!
-#       Ivan Trubach (modifications for HSE) & Stephen Chandler Paul
+#       Ivan Trubach (modifications for HSE AP)
+#       Stephen Chandler Paul (original author)
 ##########################
 
 CURL_BIN="$(which curl)"
