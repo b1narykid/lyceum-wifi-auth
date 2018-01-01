@@ -8,11 +8,11 @@ Both of them use Captive Portal for authentication, but the last one requires
 credentials (username:`hseguest`/password:`hsepassword`) each hour or so.
 This project contains utils for automated `HSE` Captive Portal authentication.
 
-## HTTP request example
+### HTTP request example
 
 *TBD*
 
-# Expirements (TODO)
+### Expirements (TODO)
 
 - Investigate how `hse.ru` authenicates users.
 - DNS port may not be restricted.
