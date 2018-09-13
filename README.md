@@ -1,33 +1,24 @@
-HSE WiFi AP authentication scripts and utils
-============================================
+# Scripts and utils for HSE Wireless Access Points
 
-# Synopsis
+## Synopsis
 
-HSE facilities usually have two wireless networks with *hse.ru* and *HSE* SSIDs.
-Both of them use Captive Portal for authentication, but the last one requires
+HSE facilities usually have two wireless networks with *HSE* and *hse.ru* SSIDs.
+Both of them use Captive Portal for authentication, but the former requires
 credentials input (username:*hseguest*|password:*hsepassword*) each hour or so.
-This project contains utils for automated *HSE* Captive Portal authentication.
+This project contains utils for automated HSE Captive Portal authentication.
 
-### HTTP request example
+Note that their Captive Portal rejects requests without the following queries:
+- `Submit=Submit&buttonClicked=4` for auth
+- `Logout=Logout` for logout
 
-__TBD__
-
-Note that their Captive Portal rejects requests without queries below:
-- `Submit=Submit` query for auth,
-- `Logout=Logout` for logout,
-- `buttonClicked=4` for auth,
-
-### Expirements (TODO)
+### Expirements
 
 - Investigate how `hse.ru` authenicates users.
 - DNS port may not be restricted.
 
-# License
+## License
 
-Copyright (c) 2016-2018 Ivan Trubach &lt;dev at b1nary.tk&gt;
-
-Licensed and published under the MIT license.
-See [license file](LICENSE.txt) for more information.
+No, it's public domain.
 
 ## Warning
 
