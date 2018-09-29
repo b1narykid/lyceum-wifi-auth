@@ -35,10 +35,11 @@ Request URL is `https://cp.hse.ru:8443/hse-captive-portal/login`.
 
 - `username`: required, user's name
 - `password`: required, user's password
-- `usergroup`: required, user's group. Well, afaik defaults to hse.ru but dgaf.
+- `usergroup`: required, user's group.
+
    Values:
-   - 1: hse.ru
-   - 2: edu.hse.ru
+   - `1` for `hse.ru` (afaik it's the default)
+   - `2` for `edu.hse.ru`
 - `cookie-enabled`: perhaps the server sends a cookie in response.  Corresponds
   to the *Запомнить*/*Remember me* option on auth web page.
 
