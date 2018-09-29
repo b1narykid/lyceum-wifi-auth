@@ -15,11 +15,11 @@ HSE captive portal authentication.
 
 Request URL `https://wlc38.hse.ru/login.html` works fine.  Though I've seen other URLs (e.g. `wlc37`).
 
-- `Submit`: required, value is `Submit`
-- `buttonClicked`: required, value is `4`
-- `username`: required, value is `hseguest`
-- `password`: required, value is `hsepassword`
-- `redirect_url`: optional, redirect URL (defunct)
+- `Submit`: required, value is `Submit`.
+- `buttonClicked`: required, value is `4`.
+- `username`: required, value is `hseguest`.
+- `password`: required, value is `hsepassword`.
+- `redirect_url`: optional, redirect URL (defunct).
 
 ### Logout
 
@@ -33,13 +33,13 @@ Request URL is `https://wlc38.hse.ru/logout.html`.
 
 Request URL is `https://cp.hse.ru:8443/hse-captive-portal/login`.
 
-- `username`: required, user's name
-- `password`: required, user's password
+- `username`: required, user's name.
+- `password`: required, user's password.
 - `usergroup`: required, user's group.
 
    Values:
-   - `1` for `hse.ru` (afaik it's the default)
-   - `2` for `edu.hse.ru`
+   - `1` for `hse.ru` (afaik it's the default).
+   - `2` for `edu.hse.ru`.
 - `cookie-enabled`: perhaps the server sends a cookie in response.  Corresponds
   to the *Запомнить*/*Remember me* option on auth web page.
 
